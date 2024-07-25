@@ -37,9 +37,9 @@ Input validation is performed to ensure only properly formed data is entering th
 Data from all potentially untrusted sources should be subject to input validation, including not only Internet-facing web clients but also backend feeds over extranets, from suppliers, partners, vendors or regulators, each of which may be compromised on their own and start sending malformed data.
 
 Input Validation should not be used as the primary method of preventing XSS, SQL Injection and other attacks which are covered in respective cheat sheets but can significantly contribute to reducing their impact if implemented properly.
-https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html
+[cheatsheet series](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
 
-in the REST Security cheatsheet, here are the key point to do
+in the REST Security [cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html), here are the key point to do
 
 - [x] Do not trust input parameters/objects.
 - [x] Validate input: length / range / format and type.
@@ -52,6 +52,10 @@ in the REST Security cheatsheet, here are the key point to do
 - [x] Have a look at input validation cheat sheet for comprehensive explanation.
 - [x] Use a secure parser for parsing the incoming messages. If you are using XML, make sure to use a parser that is not vulnerable to XXE and similar attacks.
 
+Also you can read the importance of input validation here, this article is also part of my reference to write this
+
+- https://www.digitalocean.com/community/tutorials/how-to-handle-form-inputs-efficiently-with-express-validator-in-express-js
+
 ### well why not just add some validation codeblock inside the controller?
 
 ### or why not just create an util functions?
@@ -60,4 +64,29 @@ in the REST Security cheatsheet, here are the key point to do
 
 <!--TODO: finish @ 25/07/2024-->
 
+Note: This article assumes that the reader already has an express project and only wants to implement validation using express validator. Hence, some details may be skipped. (REPHRASE)
+
+prerequesites:
+quick step:
+
+now when it's all installed we can head to our routes.
+
+1. implement basic, just the validators
+2. create the validate fun
+3. implement it to routes
+
+implement the express-validator, here i tried to seperate it to avoid making it tightly coupled to route as mentioned [dev.to](https://dev.to/nedsoft/a-clean-approach-to-using-express-validator-8go)
+
+now to my needs previously defined in the intro
+
+1. enum
+2. unique
+3. schema enforcing
+
+do sanitization
+
+error handling (basic), then refer to the error handling articles
+
 ## Summary
+
+now after implementing this, what happened to my mongoose schema? i already define things there,
